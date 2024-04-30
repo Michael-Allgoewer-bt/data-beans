@@ -299,9 +299,9 @@ module "deploy-notebooks-module" {
   bigquery_data_beans_curated_dataset = var.bigquery_data_beans_curated_dataset
   data_beans_curated_bucket           = local.data_beans_curated_bucket
   data_beans_code_bucket              = local.code_bucket
-  dataform_region                     = "us-central1"
-  cloud_function_region               = "us-central1"
-  workflow_region                     = "us-central1"
+  dataform_region                     = var.colab_enterprise_region
+  cloud_function_region               = var.colab_enterprise_region
+  workflow_region                     = var.colab_enterprise_region
   random_extension                    = random_string.project_random.result
   gcp_account_name                    = var.gcp_account_name
 

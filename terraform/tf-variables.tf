@@ -61,7 +61,7 @@ variable "deployment_service_account_name" {
 variable "org_id" {
   type        = string
   description = "This is org id for the deployment"
-  default     = ""
+  default     = "0"
   validation {
     condition     = length(var.org_id) > 0
     error_message = "The org_id is required."
