@@ -33,6 +33,8 @@
 gcp_account_name="your-name@your-domain.com"
 project_id="my-project"
 project_number="000000000000"
+default_region="us-central1"
+default_zone="us-central1-a"  # must be in region
 
 
 ####################################################################################
@@ -51,7 +53,16 @@ terraform apply \
   -var="gcp_account_name=${gcp_account_name}" \
   -var="project_id=${project_id}" \
   -var="project_number=${project_number}" \
-  -var="org_id=0"
+  -var="org_id=0"\
+  -var="multi_region=${multi_region}"\
+  -var="default_region=${region}"\
+  -var="default_zone=${zone}"\
+  -var="bigquery_non_multi_region=${region}"\
+  -var="vertex_ai_region=${region}"\
+  -var="dataplex_region=${region}"\
+  -var="data_catalog_region=${region}"\
+  -var="appengine_region=${region}"\
+  -var="colab_enterprise_region=${region}"
 
 
 terraform_exit_code=$?
